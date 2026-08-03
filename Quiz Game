@@ -1,0 +1,55 @@
+import random
+import time
+questions_difficult= [{"question": "What is the capital of Australia?",
+     "answer": "Canberra"},
+    {"question": "What is the largest planet in our solar system?",
+     "answer": "Jupiter"},
+     {"question": "What is the chemical symbol for gold?",
+      "answer": "Au"},
+     {"question": "What is the smallest country in the world?",
+      "answer": "Vatican City"},{"question": "What is the largest mammal in the world?",
+      "answer": "Blue Whale"}]
+
+questions_easy = [
+    {"question": "What is the Capital of France?",
+     "answer": "Paris"},
+    {"question": "What is 2+2?",
+     "answer": "4"},
+    {"question": "What is the largest desert in the World?",
+     "answer": "Sahara"},
+    {"question": "What is the capital of Italy?",
+     "answer": "Rome"},
+    {"question": "What is the largest ocean in the World?",
+     "answer": "Pacific Ocean"}
+    
+]
+correct_answers = 0
+question_number = "1"
+while True:
+    random.shuffle(questions_difficult)
+    random.shuffle(questions_easy)
+    print("Welcome to The Quiz Game!")
+    decision = input("Would you like to play the easy edition or the hard edition? (Type 1 for easy and type 2 for difficult): ")
+    if decision == "1":
+        questions = questions_easy
+    else:
+        questions = questions_difficult
+
+    start_time = time.time()
+    for item in questions:
+        user_answer = input("Question " + question_number + "/5: " + item["question"] + " ")
+        if user_answer == item["answer"].lower():
+            print("Correct!")
+            correct_answers +=1
+            question_number = str(int(question_number) + 1)
+        else:
+            print("Incorrect! The correct answer was " + item["answer"] +"!")
+    end_time = time.time()
+    print("You got " + str(correct_answers) + " out of " + str(len(questions)) + " questions correct!")
+    print("Time taken: " + str(round(end_time - start_time, 2)) + " seconds")
+    play_again = input("Would you like to play again? (yes/no): ")
+    correct_answers = 0
+    question_number = "1"
+    if play_again.lower() != "yes":
+        print("Thanks for playing!")
+        break
