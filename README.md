@@ -1,2 +1,3 @@
 # Robotics Journey Code
-Here is my first robotics project being a basic calculator which has helped me learn maths skills as well as print, if, &amp; else if commands.
+
+My robotics journey began with simple Python projects—starting with a basic calculator that taught me core programming and math skills. Building that first project helped me learn printing output, conditionals (if / else), and problem-solving; since then I’ve been steadily expanding into more advanced robotics concepts and documenting my progress in this repository.
